@@ -76,11 +76,14 @@ class App extends Component {
     if(this.state.user){
       return (
         <div>
-          <img width="100" src={this.state.user.photoURL} alt={this.state.user.displayName} />
-          <p> Hola {this.state.user.displayName}!</p>
-          <button onClick={this.handleLogout}>Salir</button>
-          <FileUpload onUpload={this.handleUpload}/>
-
+          <div className="App-header-userphoto">
+            <img width="100" src={this.state.user.photoURL} alt={this.state.user.displayName} />
+            <span> Welcome {this.state.user.displayName}!</span>
+          </div>
+          <div className="App-upload">
+            <button onClick={this.handleLogout}>Salir</button>
+            <FileUpload onUpload={this.handleUpload}/>
+          </div>
           {
             this.state.pictures.map(picture => (
               <div className="App-containerpic">
